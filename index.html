@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economic Cost Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="heading">Economic Cost Calculator</h2>
+    <div>
+      <label for="fixed-cost" class="label">Fixed Cost:</label>
+      <input type="number" id="fixed-cost" class="input" />
+    </div>
+    <div>
+      <label for="variable-cost" class="label">Variable Cost:</label>
+      <input type="number" id="variable-cost" class="input" />
+    </div>
+    <div>
+      <label for="quantity" class="label">Quantity:</label>
+      <input type="number" id="quantity" class="input" />
+    </div>
+    <div>
+      <button class="button" onclick="calculateTotalCost()">Calculate Total Cost</button>
+    </div>
+    <div>
+      <h3 class="result" id="total-cost"></h3>
+    </div>
+  </div>
+
+  <script>
+    function calculateTotalCost() {
+      const fixedCost = parseFloat(document.getElementById('fixed-cost').value);
+      const variableCost = parseFloat(document.getElementById('variable-cost').value);
+      const quantity = parseFloat(document.getElementById('quantity').value);
+      const totalCost = fixedCost + (variableCost * quantity);
+      document.getElementById('total-cost').textContent = `Total Cost: RM${totalCost.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
